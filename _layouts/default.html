@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> {{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/main.scss">
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Jiajun Liu">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+</head>
+
+<body id="index.html">
+    <div id="wrap" class="centered">
+        <div id="header">
+            <ul>
+                <li>`
+                    <a{% if page.categories contains "projects" %} class="active" {% endif %} href="/projects">
+                        Projects</a>
+                </li>
+                <li>
+                    <a{% if page.categories contains "about" %} class="active" {% endif %} href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            {% if page.h1 != null %}<h1>{{ page.h1 }}</h1>{% endif %}
+            {{ content }}
+        </div>
+        <div id="footer">
+            <p> {{ site.time | date: "%Y" }} Jiajun Liu</p>
+        </div>
+    </div>
+</body>
+
+</html>

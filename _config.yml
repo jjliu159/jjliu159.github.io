@@ -22,14 +22,10 @@ title: Connect with me!
 email: jjliu760@nyu.edu
 description: >- # this means to ignore newlines until "baseurl:"
   Yeah I tend to use my school's email address because it already has all of the saved information that I used to apply during my college years.
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jjliu159
-
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+sass:
+    sass_dir: _sass
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -2,20 +2,19 @@
 <html lang="en">
 
 <head>
-    <title> {{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/main.scss">
-    
+    <link rel="stylesheet" href="/assets/css/main.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Jiajun Liu">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 </head>
 
-<body id="index.html">
+<body id="index-html">
     <div id="wrap" class="centered">
         <div id="header">
-            <ul>
-                <li>`
+            <a id="logo" href="/"><span>Jiajun Liu</span></a>
+            <ul id = "links">
+                <li>
                     <a{% if page.categories contains "projects" %} class="active" {% endif %} href="/projects">
                         Projects</a>
                 </li>

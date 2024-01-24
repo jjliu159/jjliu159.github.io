@@ -2,5 +2,4 @@
 layout: default
 ---
 
-
-<h2>hi</hi>
+![cool picture](/assets/images/cool%20picture.jpg)

@@ -1,6 +1,9 @@
 ---
 ---
 
+@import "normalize";
+@import "twilight";
+
 /****************************************************************** VARIABLES*/
 
 // Sizes
@@ -17,7 +20,7 @@ $width-page: 720px;
 
 // Colors
 
-$gray-dark: #252525;
+$gray-dark: #202227;
 $gray-darker: #14171d;
 $gray-light: #626874;
 $gray: #313640;
@@ -154,6 +157,21 @@ img {
   max-width: 100%;
 }
 
+// Selection
+
+@mixin selection() {
+  color: $gray-dark;
+  background: $green-select;
+}
+
+::-moz-selection {
+  @include selection();
+}
+
+::selection {
+  @include selection();
+}
+
 // Placeholder
 
 ::-webkit-input-placeholder,
@@ -223,7 +241,7 @@ img {
   }
 
   #logo {
-    margin-left: -35px;
+    margin-left: -5px;
   }
 
   img {
@@ -231,6 +249,11 @@ img {
     position: absolute;
     margin-top: -1px;
     width: 30px;
+  }
+
+  #logo:hover img {
+    transform: rotate(360deg);
+    transition: transform 0.5s;
   }
 
   span {
@@ -307,6 +330,10 @@ img {
   }
 }
 
+#disqus_thread {
+  margin-top: 70px;
+}
+
 #footer {
   color: $gray-light;
   font-size: $font-size-small;
@@ -356,6 +383,12 @@ img {
   }
 
   // SVGs from https://codepen.io/ruandre/pen/howFi
+  svg {
+    fill: $gray-light;
+    height: 100%;
+    transition: fill $transition-fast;
+    width: 100%;
+  }
 }
 
 // Classes
@@ -705,3 +738,121 @@ img.right {
 }
 
 /********************************************************************** ISSO */
+
+#isso-thread {
+  // Comment count
+  h4 {
+    display: none;
+  }
+
+  // Inputs
+  input[name="edit"],
+  input[name="preview"],
+  input[name="website"],
+  label {
+    display: none;
+  }
+  input[name="email"] {
+    margin-left: 5px;
+  }
+  input[type="submit"] {
+    font-weight: 700;
+    padding: 5px 10px;
+  }
+  input,
+  .isso-textarea {
+    background: $gray;
+    box-shadow: none !important;
+    border: 0 solid transparent !important;
+    color: $gray-light !important;
+    margin: 0 0 5px;
+  }
+  p {
+    margin: 0;
+  }
+
+  // Comment
+  .isso-comment:not(:first-of-type),
+  .isso-follow-up .isso-comment {
+    border-top: 1px solid $gray !important;
+  }
+
+  // Comment author
+  .isso-author {
+    color: $gray-light !important;
+  }
+
+  // "Reply" link
+  .isso-comment > div.isso-text-wrapper > .isso-comment-footer > a + a {
+    margin-left: 1em !important;
+    padding-left: 0 !important;
+  }
+
+  // Footer link on hover
+  .isso-comment > div.isso-text-wrapper > .isso-comment-footer a:hover {
+    color: $green-light !important;
+    text-shadow: none !important;
+  }
+
+  // Timestamp
+  .isso-comment
+    > div.isso-text-wrapper
+    > .isso-comment-header
+    a.isso-permalink {
+    color: $gray-light !important;
+
+    &:hover {
+      border-color: $gray-light !important;
+      color: $gray-light !important;
+    }
+  }
+
+  svg {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/********************************************************************* TIPSY */
+
+.tipsy {
+  font-size: $font-size-small;
+  padding: 5px;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.tipsy-inner {
+  background-color: $gray-darker;
+  color: $white-off;
+  max-width: 200px;
+  padding: 10px 15px 9px;
+  text-align: center;
+}
+
+.tipsy-inner {
+  border-radius: $border-radius;
+}
+
+.tipsy-arrow {
+  border: 5px dashed #000;
+  height: 0;
+  line-height: 0;
+  position: absolute;
+  width: 0;
+}
+
+.tipsy-arrow-s {
+  border-top-color: #000;
+}
+
+.tipsy-s .tipsy-arrow {
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-style: solid;
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+}

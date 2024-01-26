@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,21 +10,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Jiajun Liu">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-<body id="index-html">
+<body id="top" class="{{ page.title | downcase | remove: ".html" | replace:' ','-' }}-html">
     <div id="wrap" class="centered">
         <div id="header">
             <a id="logo" href="/"><span>Jiajun Liu</span></a>
             <ul id = "links">
-                <li>
-                    <a{% if page.categories contains "projects" %} class="active" {% endif %} href="/projects">
-                        Projects</a>
-                </li>
-                <li>
-                    <a{% if page.categories contains "about" %} class="active" {% endif %} href="/about">About</a>
-                </li>
-            </ul>
+                <ul>
+                    <li><a{% if page.categories contains "projects" %} class="active"{% endif %} href="/projects">Projects</a></li>
+                    <li><a{% if page.categories contains "blog" %} class="active"{% endif %} href="/blog">Blog</a></li>
+                    <li><a{% if page.categories contains "about" %} class="active"{% endif %} href="/about">About</a></li>
+                </ul>
         </div>
         <div class="content">
             {% if page.h1 != null %}<h1>{{ page.h1 }}</h1>{% endif %}

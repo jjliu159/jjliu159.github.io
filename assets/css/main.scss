@@ -549,7 +549,7 @@ img.right {
   }
 
   $width-thumbnail: 100px;
-  $margin-thumbnail: 6px;
+  $margin-thumbnail: 2px;
 
   .project-cell {
     display: table-cell;
@@ -568,6 +568,10 @@ img.right {
       @media (min-width: 450px) {
         min-width: 2 * $width-total;
       }
+
+      @media (min-width: 600px) {
+        min-width: 3 * $width-total;
+      }
     }
   }
 
@@ -575,25 +579,41 @@ img.right {
     color: $gray-light;
   }
 
+  .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+    justify-items: center;
+    align-items: center;
+  }
+
   .thumbnails img {
     border-radius: $border-radius;
     box-shadow: none;
     cursor: pointer;
-    display: block;
     display: inline-block;
     margin: 0 ($margin-thumbnail) ($margin-thumbnail) 0;
     max-width: $width-thumbnail;
+    max-height: $width-thumbnail;
+    width: auto;
+    height: auto;
     opacity: 0.2;
     transition: opacity 0.15s;
     vertical-align: top;
 
     &.tiny {
       max-width: ($width-thumbnail - $margin-thumbnail) / 2;
+      max-height: ($width-thumbnail - $margin-thumbnail) / 2;
     }
 
     &.dark {
       filter: brightness(4);
       -webkit-filter: brightness(4);
+    }
+
+    &.white-bg {
+      background-color: white;
+      padding: 5px;
     }
 
     &.untagged {
@@ -636,7 +656,7 @@ img.right {
   }
 
   $width-thumbnail: 100px;
-  $margin-thumbnail: 6px;
+  $margin-thumbnail: 2px;
 
   .project-cell {
     display: table-cell;
@@ -655,6 +675,10 @@ img.right {
       @media (min-width: 450px) {
         min-width: 2 * $width-total;
       }
+
+      @media (min-width: 600px) {
+        min-width: 3 * $width-total;
+      }
     }
   }
 
@@ -662,25 +686,41 @@ img.right {
     color: $gray-light;
   }
 
+  .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+    justify-items: center;
+    align-items: center;
+  }
+
   .thumbnails img {
     border-radius: $border-radius;
     box-shadow: none;
     cursor: pointer;
-    display: block;
     display: inline-block;
     margin: 0 ($margin-thumbnail) ($margin-thumbnail) 0;
     max-width: $width-thumbnail;
+    max-height: $width-thumbnail;
+    width: auto;
+    height: auto;
     opacity: 0.2;
     transition: opacity 0.15s;
     vertical-align: top;
 
     &.tiny {
       max-width: ($width-thumbnail - $margin-thumbnail) / 2;
+      max-height: ($width-thumbnail - $margin-thumbnail) / 2;
     }
 
     &.dark {
       filter: brightness(4);
       -webkit-filter: brightness(4);
+    }
+
+    &.white-bg {
+      background-color: white;
+      padding: 5px;
     }
 
     &.untagged {
